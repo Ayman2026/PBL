@@ -1,8 +1,8 @@
 import path from "path";
 
-// Use environment variables for data paths, fallback to relative paths
-const DATA_DIR_PBL = process.env.DATA_DIR_PBL || "./02_Primary_PBL_Data/csv_exports";
-const DATA_DIR_GRANT = process.env.DATA_DIR_GRANT || "./03_Grant_Reporting_Evidence";
+// Use environment variables for data paths, fallback to public/data folder
+const DATA_DIR_PBL = process.env.DATA_DIR_PBL || "public/data/02_Primary_PBL_Data/csv_exports";
+const DATA_DIR_GRANT = process.env.DATA_DIR_GRANT || "public/data/03_Grant_Reporting_Evidence";
 
 export const DATA_PATHS = {
   pblJuly: path.join(process.cwd(), DATA_DIR_PBL, "PBL_School_Response_Data_July_2025.csv"),
