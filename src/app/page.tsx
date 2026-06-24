@@ -2,6 +2,9 @@ import { Nav } from "@/components/Nav";
 import { ProgramDashboard } from "@/components/ProgramDashboard";
 import { loadSchoolRecords } from "@/lib/data-loader";
 
+// Force dynamic rendering (load data at runtime, not build time)
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   const records = loadSchoolRecords();
 

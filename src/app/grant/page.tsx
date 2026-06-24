@@ -7,6 +7,9 @@ import {
   loadGrantPerformance,
 } from "@/lib/data-loader";
 
+// Force dynamic rendering (load data at runtime, not build time)
+export const dynamic = 'force-dynamic';
+
 export default function GrantPage() {
   const performance = loadGrantPerformance();
   const finance = loadGrantFinance();
