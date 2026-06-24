@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: 'standalone', // Enable for Docker deployment
+  // Removed standalone output for Vercel deployment
 };
 
 export default nextConfig;
