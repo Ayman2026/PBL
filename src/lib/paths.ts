@@ -4,6 +4,12 @@ import path from "path";
 const DATA_DIR_PBL = process.env.DATA_DIR_PBL || "public/data/02_Primary_PBL_Data/csv_exports";
 const DATA_DIR_GRANT = process.env.DATA_DIR_GRANT || "public/data/03_Grant_Reporting_Evidence";
 
+// Debug logging
+console.log('=== Data Paths Debug ===');
+console.log('process.cwd():', process.cwd());
+console.log('DATA_DIR_PBL:', DATA_DIR_PBL);
+console.log('DATA_DIR_GRANT:', DATA_DIR_GRANT);
+
 export const DATA_PATHS = {
   pblJuly: path.join(process.cwd(), DATA_DIR_PBL, "PBL_School_Response_Data_July_2025.csv"),
   pblAugust: path.join(process.cwd(), DATA_DIR_PBL, "PBL_School_Response_Data_August_2025.csv"),
@@ -13,3 +19,6 @@ export const DATA_PATHS = {
   evidenceIndex: path.join(process.cwd(), DATA_DIR_GRANT, "csv", "03_Evidence_and_Media_Index.csv"),
   evidenceImages: path.join(process.cwd(), DATA_DIR_GRANT),
 } as const;
+
+console.log('pblJuly path:', DATA_PATHS.pblJuly);
+console.log('========================');
