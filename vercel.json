@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "env": {
+    "DATA_DIR_PBL": "../02_Primary_PBL_Data/csv_exports",
+    "DATA_DIR_GRANT": "../03_Grant_Reporting_Evidence",
+    "CACHE_TTL_MINUTES": "5"
+  }
+}
