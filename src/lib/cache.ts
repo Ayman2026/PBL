@@ -3,8 +3,6 @@
  * In production, consider Redis or file-based caching with TTL
  */
 
-import type { SchoolRecord, GrantPerformance, GrantFinanceRow, EvidenceRecord } from "./types";
-
 interface CacheEntry<T> {
   data: T;
   timestamp: number;
@@ -13,7 +11,7 @@ interface CacheEntry<T> {
 const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 class DataCache {
-  private cache = new Map<string, CacheEntry<any>>();
+  private cache = new Map<string, CacheEntry<unknown>>();
 
   get<T>(key: string): T | null {
     const entry = this.cache.get(key);
@@ -25,7 +23,7 @@ class DataCache {
       return null;
     }
 
-    return entry.data;
+    return entry.data as T;
   }
 
   set<T>(key: string, data: T): void {

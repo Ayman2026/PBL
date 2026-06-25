@@ -1,0 +1,106 @@
+================================================================================
+                    🚀 START HERE - DEPLOYMENT GUIDE
+================================================================================
+
+Your GitHub repository is ready: https://github.com/Ayman2026/PBL.git
+
+================================================================================
+                         STEP 1: PUSH TO GITHUB
+================================================================================
+
+Open your terminal in the 'code' folder and copy-paste these commands:
+
+git init
+git add .
+git commit -m "Initial commit: PBL Dashboard"
+git branch -M main
+git remote add origin https://github.com/Ayman2026/PBL.git
+git push -u origin main
+
+✅ This will upload all your code to GitHub
+
+================================================================================
+                        STEP 2: DEPLOY TO VERCEL
+================================================================================
+
+1. Open your browser and go to: https://vercel.com
+
+2. Click "Sign Up" or "Log In" with GitHub
+
+3. Click "Add New Project" (big blue button)
+
+4. Find and click "Import" next to: Ayman2026/PBL
+
+5. Vercel will show project settings:
+   ✅ Framework Preset: Next.js (auto-detected)
+   ✅ Root Directory: ./
+   ✅ Build Command: npm run build
+   ✅ Output Directory: .next
+
+6. Click "Environment Variables" and add these 4 variables:
+
+   Name: DATA_DIR_PBL
+   Value: public/data/02_Primary_PBL_Data/csv_exports
+
+   Name: DATA_DIR_GRANT
+   Value: public/data/03_Grant_Reporting_Evidence
+
+   Name: CACHE_TTL_MINUTES
+   Value: 5
+
+   Name: ENABLE_AI_NARRATIVE
+   Value: false
+
+7. Click "Deploy" button
+
+8. Wait 2-3 minutes while Vercel builds and deploys ⏳
+
+9. DONE! 🎉 You'll get a live URL like:
+   https://pbl-something-random.vercel.app
+
+================================================================================
+                          STEP 3: TEST YOUR APP
+================================================================================
+
+Open these URLs in your browser:
+
+✅ Dashboard: https://your-app.vercel.app/
+✅ Grant Report: https://your-app.vercel.app/grant
+
+Test:
+- Filters work (month, district, grade)
+- Data displays correctly
+- Copy to clipboard works
+- No errors in browser console (F12)
+
+================================================================================
+                              THAT'S IT!
+================================================================================
+
+Your app is now LIVE on the internet! 🌐
+
+Automatic deployments are enabled - every time you push to GitHub,
+Vercel will automatically rebuild and redeploy your app.
+
+================================================================================
+                            NEED HELP?
+================================================================================
+
+Detailed guides:
+- GIT_DEPLOYMENT_STEPS.md - Full git and Vercel instructions
+- DEPLOYMENT_CHECKLIST.md - Step-by-step checklist
+- DEPLOYMENT_GUIDE.md - All deployment options
+
+Questions? Check the troubleshooting section in GIT_DEPLOYMENT_STEPS.md
+
+================================================================================
+                         YOUR REPOSITORY INFO
+================================================================================
+
+GitHub: https://github.com/Ayman2026/PBL
+Owner: Ayman2026
+Repo: PBL
+
+After deployment, update your README.md with the live Vercel URL!
+
+================================================================================

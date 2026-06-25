@@ -1,0 +1,63 @@
+================================================================================
+🚀 PUSH TO GITHUB - QUICK COMMANDS
+================================================================================
+
+Repository URL: https://github.com/Ayman2026/PBL.git
+
+================================================================================
+STEP 1: Open Terminal in the 'code' folder and run these commands:
+================================================================================
+
+git init
+git add .
+git commit -m "Initial commit: PBL Dashboard ready for deployment"
+git branch -M main
+git remote add origin https://github.com/Ayman2026/PBL.git
+git push -u origin main
+
+================================================================================
+STEP 2: Deploy to Vercel
+================================================================================
+
+Option A - Using Vercel Website (Easiest):
+1. Go to: https://vercel.com
+2. Sign in with GitHub
+3. Click "Add New Project"
+4. Import: Ayman2026/PBL
+5. Add these environment variables:
+   - DATA_DIR_PBL = public/data/02_Primary_PBL_Data/csv_exports
+   - DATA_DIR_GRANT = public/data/03_Grant_Reporting_Evidence
+   - CACHE_TTL_MINUTES = 5
+   - ENABLE_AI_NARRATIVE = false
+6. Click "Deploy"
+7. Wait 3 minutes
+8. Done! 🎉
+
+Option B - Using Vercel CLI:
+npm install -g vercel
+vercel login
+vercel --prod
+
+================================================================================
+What's Included:
+================================================================================
+✅ Production-ready code
+✅ All data files (CSV + images)
+✅ Deployment configurations
+✅ Documentation files
+✅ GitHub-optimized README
+✅ Environment variables configured
+
+================================================================================
+After Deployment:
+================================================================================
+Test these URLs:
+- Homepage: https://your-app.vercel.app/
+- Grant Report: https://your-app.vercel.app/grant
+
+Update README.md with your live URL!
+
+================================================================================
+Need Help?
+================================================================================
+See: GIT_DEPLOYMENT_STEPS.md for detailed instructions
