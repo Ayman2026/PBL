@@ -1,0 +1,66 @@
+================================================================================
+                        🔧 PUSH FIX TO GITHUB
+================================================================================
+
+I've fixed the path resolution issue that was causing the error on Vercel.
+
+The problem: Vercel was looking for files in /var/ instead of public/data/
+
+The fix: Updated src/lib/paths.ts to handle paths correctly
+
+================================================================================
+                    RUN THESE COMMANDS IN YOUR TERMINAL
+================================================================================
+
+git add .
+git commit -m "Fix: Correct path resolution for Vercel deployment"
+git push origin main
+
+================================================================================
+                AFTER PUSHING, UPDATE VERCEL ENVIRONMENT VARIABLES
+================================================================================
+
+1. Go to: https://vercel.com/dashboard
+2. Click your PBL project
+3. Go to Settings → Environment Variables
+4. Make sure these variables have NO leading slashes:
+
+   ✅ CORRECT:
+   DATA_DIR_PBL = public/data/02_Primary_PBL_Data/csv_exports
+   DATA_DIR_GRANT = public/data/03_Grant_Reporting_Evidence
+
+   ❌ WRONG:
+   DATA_DIR_PBL = /public/data/02_Primary_PBL_Data/csv_exports
+   DATA_DIR_GRANT = /public/data/03_Grant_Reporting_Evidence
+
+5. If they have leading slashes, delete them and add new ones
+6. Vercel will automatically redeploy after you push to GitHub
+
+================================================================================
+                            WAIT FOR REDEPLOY
+================================================================================
+
+Vercel will automatically:
+1. Detect your GitHub push
+2. Rebuild your app (2-3 minutes)
+3. Deploy the fixed version
+
+Or manually trigger redeploy:
+- Vercel Dashboard → Deployments → Click "⋮" → Redeploy
+
+================================================================================
+                          TEST AFTER DEPLOYMENT
+================================================================================
+
+Visit: https://your-app.vercel.app/
+
+✅ Homepage should load with data
+✅ KPI cards should show numbers
+✅ Filters should work
+✅ /grant page should load
+
+================================================================================
+
+For detailed instructions, see: VERCEL_FIX_INSTRUCTIONS.md
+
+================================================================================
